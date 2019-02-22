@@ -220,9 +220,10 @@ def _generate_num_row_groups_per_file(dataset, spark_context, filesystem_factory
         pq_file.close()
         return relative_path, num_row_groups
 
-    row_groups = spark_context.parallelize(paths, len(paths)) \
-        .map(get_row_group_info) \
-        .collect()
+    #row_groups = spark_context.parallelize(paths, len(paths)) \
+    #    .map(get_row_group_info) \
+    #    .collect()
+    row_groups = list(map(lambda x: get_row_group_info(x), paths))
     num_row_groups_str = json.dumps(dict(row_groups))
     # Add the dict for the number of row groups in each file to the parquet file metadata footer
     utils.add_to_dataset_metadata(dataset, ROW_GROUPS_PER_FILE_KEY, num_row_groups_str)
