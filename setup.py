@@ -19,7 +19,7 @@ import re
 import setuptools
 from setuptools import setup
 
-PACKAGE_NAME = 'petastorm'
+PACKAGE_NAME = 'hops-petastorm'
 
 with open('README.rst') as f:
     long_description = f.read()
@@ -38,7 +38,6 @@ REQUIRED_PACKAGES = [
     'packaging>=15.0',
     'pandas>=0.19.0',
     'psutil>=4.0.0',
-    'pyspark>=2.1.0',
     'pyzmq>=14.0.0',
     'pyarrow>=0.12.0',
     'six>=1.5.0',
@@ -82,7 +81,8 @@ setup(
     install_requires=REQUIRED_PACKAGES,
     packages=packages,
     description='Petastorm is a library enabling the use of Parquet storage from Tensorflow, Pytorch, and'
-                ' other Python-based ML training frameworks.',
+                ' other Python-based ML training frameworks. This is a fork of Petastorm that is compatible with Hops'
+                ' installations',
     long_description=long_description,
     long_description_content_type="text/x-rst",
     license='Apache License, Version 2.0',
