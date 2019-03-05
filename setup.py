@@ -19,7 +19,7 @@ import re
 import setuptools
 from setuptools import setup
 
-PACKAGE_NAME = 'petastorm'
+PACKAGE_NAME = 'hops-petastorm'
 
 with open('README.rst') as f:
     long_description = f.read()
@@ -35,7 +35,6 @@ REQUIRED_PACKAGES = [
     'numpy>=1.13.3',
     'pandas>=0.19.0',
     'psutil>=4.0.0',
-    'pyspark>=2.1.0',
     'pyzmq>=14.0.0',
     'pyarrow>=0.10',
     'six>=1.5.0',
@@ -53,6 +52,7 @@ EXTRA_REQUIRE = {
     'opencv': ['opencv-python>=3.2.0.6'],
     'tf': ['tensorflow>=1.4.0'],
     'tf_gpu': ['tensorflow-gpu>=1.4.0'],
+    'pyspark': ['pyspark>=2.1.0'],
     'test': [
         'Pillow>=3.0',
         'codecov>=2.0.15',
@@ -79,7 +79,8 @@ setup(
     install_requires=REQUIRED_PACKAGES,
     packages=packages,
     description='Petastorm is a library enabling the use of Parquet storage from Tensorflow, Pytorch, and'
-                ' other Python-based ML training frameworks.',
+                ' other Python-based ML training frameworks. This is a fork of Petastorm that is compatible with Hops'
+                ' installations',
     long_description=long_description,
     long_description_content_type="text/x-rst",
     license='Apache License, Version 2.0',
@@ -91,8 +92,9 @@ setup(
             'petastorm-throughput.py=petastorm.benchmark.cli:main',
         ],
     },
-    url='https://github.com/uber/petastorm',
-    author='Uber Technologies, Inc.',
+    url='https://github.com/logicalclocks/petastorm',
+    author='Uber Technologies, Inc., Kim Hammar',
+    author_email='kim@logicalclocks.com',
     classifiers=[
         'Environment :: Console',
         'Environment :: Web Environment',
