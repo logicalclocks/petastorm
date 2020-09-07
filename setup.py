@@ -54,6 +54,7 @@ EXTRA_REQUIRE = {
     'opencv': ['opencv-python>=3.2.0.6'],
     'tf': ['tensorflow>=1.14.0'],
     'tf_gpu': ['tensorflow-gpu>=1.14.0'],
+    'pyspark': ['pyspark>=2.1.0'], 
     'test': [
         'Pillow>=6.2.1',
         'codecov>=2.0.15',
